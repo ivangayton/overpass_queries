@@ -5,6 +5,9 @@ import requests
 import json
 
 def query(query_string):
+    """Accept a query in Overpass API query language, 
+    return a JSON string of the data from an Overpass server
+    """
     overpass_url = "http://overpass-api.de/api/interpreter"
     #overpass_url = "https://lz4.overpass-api.de/api/interpreter"
     try:
@@ -16,6 +19,15 @@ def query(query_string):
     print(response)
     data = response.json()
     return data
+
+def raw_json_to_geojson_points(overpass_json):
+    """Accept a raw JSON string of data from an Overpass API query.
+    Return a GeoJSON of the same data, after converting all polygons
+    to points.
+    """ 
+
+def geojsons_to_geopackage(geojson):
+    """Accept one or more GeoJSON  
 
 if __name__ == "__main__":
     """return a bunch of data from Overpass API"""
@@ -85,6 +97,17 @@ if __name__ == "__main__":
     nwr["amenity"="university"](area)(-2.05,27,3.8,31.1);
     area["ISO3166-1"="CD"][admin_level=2];
     nwr["amenity"="school"](area)(-2.05,27,3.8,31.1);
+    );
+    out body;
+    >;
+    out body;
+    """
+
+    vaccination = """
+    [out:json][timeout:200];
+    (
+    area["ISO3166-1"="CD"][admin_level=2];
+    nwr["vaccination"](area)(-2.05,27,3.8,31.1);
     );
     out body;
     >;
