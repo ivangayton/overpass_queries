@@ -24,10 +24,11 @@ def raw_json_to_geojson_points(overpass_json):
     """Accept a raw JSON string of data from an Overpass API query.
     Return a GeoJSON of the same data, after converting all polygons
     to points.
-    """ 
+    """
+    
 
 def geojsons_to_geopackage(geojson):
-    """Accept one or more GeoJSON  
+    """Accept one or more GeoJSON files, return geopackage"""
 
 if __name__ == "__main__":
     """return a bunch of data from Overpass API"""

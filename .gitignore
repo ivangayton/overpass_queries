@@ -1,3 +1,8 @@
+HOT_Export_tool/
+Raw_JSON/
+Turbo/
+results.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
