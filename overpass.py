@@ -35,14 +35,14 @@ def osm_json_to_geojson(infile):
     USING sudo npm install -g osmtogeojson
     """
     try:
+        print(f'Trying to turn {infile} into geojson')
         p = subprocess.run(["osmtogeojson", infile],
                            capture_output=True, encoding='utf-8')
         geojsonstring = p.stdout
-        print(f'The osmtogeojson module accepted {overpass_json_file} and '\
+        print(f'The osmtogeojson module accepted {infile} and '\
               f'returned something of type {type(geojsonstring)}')
         return geojsonstring
     except Exception as e:
-        print("The osmtogeojson didn't work. Is it installed?")
         print(e)
         
 def centroid_and_merge_to_points(geojson):
@@ -75,8 +75,8 @@ if __name__ == "__main__":
         
         with open(rawdatafilepath, 'w') as of:
             of.writelines(json.dumps(data))
-
-        print(f'Sending {rawdatafilepath} for geojsonification')
+      
         geojson = osm_json_to_geojson(rawdatafilepath)
+        
         with open(geojsonfilepath, 'w') as of:
             of.write(geojson)
