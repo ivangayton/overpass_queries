@@ -1,0 +1,10 @@
+[out:json][timeout:200];
+(
+nwr["amenity"="college"](12.5,-8.1,12.71,-7.9);
+nwr["amenity"="kindergarten"](12.5,-8.1,12.71,-7.9);
+nwr["amenity"="university"](12.5,-8.1,12.71,-7.9);
+nwr["amenity"="school"](12.5,-8.1,12.71,-7.9);
+);
+out body;
+>;
+out body;
