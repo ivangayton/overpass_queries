@@ -3,8 +3,8 @@ Automating download, massage, and publication of OpenStreetMap data using the Ov
 
 ## Usage
 
-```python3 overpass.py [query_file.txt]```
+```python3 overpass.py [query_file.overpassql]```
 
 example:
 
-```python3 overpass.py queries/Bamako/Bamako_education.txt``` will get you a geojson extract of the schools in Bamako, Mali.
+```python3 overpass.py queries/Bamako/Bamako_education.overpassql``` will get you a geojson extract of the schools in Bamako, Mali.
